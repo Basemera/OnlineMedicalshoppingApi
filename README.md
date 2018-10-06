@@ -1,5 +1,7 @@
 # OnlineMedicalshoppingApi
-This is an application with an API written in NodeJs. It is an online medical App that enables a user to buy medicine online. 
+This is an application with an API written in NodeJs. It is an online medical App that enables a user to buy medicine online.
+
+[![Coverage Status](https://coveralls.io/repos/github/hadijahkyampeire/OnlineMedicalshoppingApi/badge.svg?branch=develop)](https://coveralls.io/github/hadijahkyampeire/OnlineMedicalshoppingApi?branch=develop)
 
 ### Requirements
 - Ensure to have mongodb, you can download it [here](https://www.mongodb.com/download-center) 

@@ -4,7 +4,9 @@
   "description": "simple online medical shopping app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "coverage": "react-scripts test --env=jsdom --coverage",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "dependencies": {
     "express": "*",
@@ -12,5 +14,8 @@
     "mongoose": "*"
   },
   "author": "jsgulus",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "coveralls": "^3.0.2"
+  }
 }

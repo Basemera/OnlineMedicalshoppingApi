@@ -6,11 +6,14 @@ var mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var config = require('./config');
+var VerifyToken = require('./server/models/user/verifyToken');
 
 app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
 
 User = require('./server/models/user/user')
+Medicine = require('./server/models/medicine/medicine')
+
 const validateSignup = require('./server/middleware/validateSignup')
 const validateLogin = require('./server/middleware/validateLogin')
 
@@ -80,6 +83,18 @@ app.post('/api/auth/login', validateLogin,function(req, res) {
         });
       }); 
   });
+
+//Get all medicines
+app.get('/api/medicines', VerifyToken, function(req, res, next){
+  Medicine.getMedicines(function(err, medicines){
+    if (err){
+      throw err;
+    }
+    res.json(medicines)
+
+  });
+});
+
 app.listen('3000');
 console.log('Running on port 3000...');
 module.exports = app;
